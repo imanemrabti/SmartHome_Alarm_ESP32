@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "author": "Aya Fatene",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 14.44, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -99.6,
+      "left": -207.4,
+      "attrs": { "color": "limegreen" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -99.6,
+      "left": -140.2,
+      "attrs": { "color": "yellow" }
+    },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -140, "left": 136.62, "attrs": {} },
+    { "type": "wokwi-led", "id": "led3", "top": -99.6, "left": -265, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -84.9,
+      "left": 283.9,
+      "attrs": { "distance": "81" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -132,
+      "left": -46.2,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 342.4,
+      "left": 312.8,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 159.8,
+      "left": -364.8,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 217.4,
+      "left": -364.8,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "doorBtn",
+      "top": 409.4,
+      "left": -364.8,
+      "attrs": { "color": "red", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn4",
+      "top": 265.4,
+      "left": -364.8,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn5",
+      "top": 323,
+      "left": -364.8,
+      "attrs": { "color": "green", "xray": "1" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "led1:A", "esp:27", "green", [ "v0" ] ],
+    [ "led1:C", "esp:GND.1", "green", [ "v115.2", "h173.05" ] ],
+    [ "led2:C", "esp:GND.1", "gold", [ "v182.4", "h105.85" ] ],
+    [ "led2:A", "esp:25", "gold", [ "v0" ] ],
+    [ "pir1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "pir1:OUT", "esp:14", "green", [ "h-0.14", "v278.4", "h-163.35" ] ],
+    [ "pir1:VCC", "esp:5V", "red", [ "v268.8", "h-105.75" ] ],
+    [ "led3:C", "esp:GND.1", "red", [ "v201.6", "h254.61" ] ],
+    [ "led3:A", "esp:26", "red", [ "v0" ] ],
+    [ "ultrasonic1:VCC", "esp:5V", "red", [ "v230.4", "h-345.75" ] ],
+    [ "ultrasonic1:GND", "esp:GND.3", "black", [ "v0" ] ],
+    [ "ultrasonic1:TRIG", "esp:5", "green", [ "v0" ] ],
+    [ "ultrasonic1:ECHO", "esp:18", "green", [ "v0" ] ],
+    [ "bz1:1", "esp:GND.1", "black", [ "v0" ] ],
+    [ "bz1:2", "esp:12", "red", [ "v0" ] ],
+    [ "lcd1:VCC", "esp:5V", "blue", [ "h0" ] ],
+    [ "lcd1:GND", "esp:GND.3", "black", [ "v-48", "h86.4", "v-192" ] ],
+    [ "lcd1:SDA", "esp:21", "green", [ "h-19.2", "v-57.4", "h86.4" ] ],
+    [ "lcd1:SCL", "esp:22", "green", [ "h9.6", "v-57.3", "h67.2", "v-249.6" ] ],
+    [ "btn2:1.r", "esp:GND.1", "limegreen", [ "h316.85" ] ],
+    [ "doorBtn:1.r", "esp:GND.1", "red", [] ],
+    [ "doorBtn:2.r", "esp:19", "red", [] ],
+    [ "btn3:1.r", "esp:GND.1", "limegreen", [ "h269", "v-67.2", "h47.85" ] ],
+    [ "btn4:1.r", "esp:GND.1", "limegreen", [ "h249.8", "v-124.8" ] ],
+    [ "btn5:1.r", "esp:GND.1", "limegreen", [ "h297.8", "v-153.6", "h19.05" ] ],
+    [ "btn2:2.r", "esp:32", "limegreen", [ "h0" ] ],
+    [ "btn3:2.r", "esp:33", "limegreen", [ "h240.2", "v-153.4" ] ],
+    [ "btn4:2.r", "esp:4", "limegreen", [ "h0" ] ],
+    [ "btn5:2.r", "esp:15", "limegreen", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
